@@ -13,8 +13,8 @@ C언어 및 CLion 정리
 ### 로그 환경설정 xml 파일 : log4crc
 * log4crc 를 cmake-build-debug-XXX 아래 .out(실행파일)과 함께 위치
 * log4crc 주의사항
-    - <category name="dev" priority="debug" appender="stdout" />
-    - <category name="dev" priority="debug" appender="myrollingfileappender" />
+    - `<category name="dev" priority="debug" appender="stdout" />`
+    - `<category name="dev" priority="debug" appender="myrollingfileappender" />`
     - 위와 같이 같은 이름의 카테고리를 2개 선언할 경우 마지막에 선언된 1개의 카테고리(여기서는 appender가 myrollingfileappender)만   
     로깅에 적용된다.
     
