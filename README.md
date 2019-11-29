@@ -15,8 +15,7 @@ C언어 및 CLion 정리
 * log4crc 주의사항
     - `<category name="dev" priority="debug" appender="stdout" />`
     - `<category name="dev" priority="debug" appender="myrollingfileappender" />`
-    - 위와 같이 같은 이름의 카테고리를 2개 선언할 경우 마지막에 선언된 1개의 카테고리(여기서는 appender가 myrollingfileappender)만   
-    로깅에 적용된다.
+    - 위와 같이 같은 이름의 카테고리를 2개 선언할 경우 마지막에 선언된 1개의 카테고리(여기서는 appender가 myrollingfileappender)만 로깅에 적용된다.
     
 ### armv7용 라이브러리 생성 과정
 * log4c 라이브러리 설치 압축파일 다운로드 : [링크](https://sourceforge.net/projects/log4c/files/log4c/1.2.4/log4c-1.2.4.tar.gz/download?use_mirror=jaist)
