@@ -2,20 +2,29 @@
 C언어 및 CLion 정리
 
 ## CMake macOS arm-linux cross compile
-### crosstool-ng
-* 설명 : Toolchain(크로스 컴파일 개발 환경) 생성기
-* 설치 : `brew install crosstool-ng`
+### arm-linux Toolchain  
+* 다운로드 [링크](https://github.com/thinkski/osx-arm-linux-toolchains)   
+Download 항목에서 [arm-unknown-linux-gnueabi](https://github.com/thinkski/osx-arm-linux-toolchains/releases/download/8.3.0/arm-unknown-linux-gnueabi.tar.xz) 클릭해서 다운로드
 
-### 
+* 다운받은 디렉터리로 이동 후 압축풀기
+    - 여기서는 `/Users/jujin/Downloads`로 가정
+```bash
+$ cd ~/Downloads
+$ tar -xvf arm-unknown-linux-gnueabi.tar.xz
+```
+* 폴더 이동
+    - `/Users/jujin/Downloads` 디렉터리 아래에 두기 뭐해서 옮김 
+    - `/Users/jujin/Documents/dev/toolchain` 디렉터리 밑에 두기로 가정
+    - `Documents` 디렉터리 아래 `dev` 및 `toolchain` 디렉터리 모두 직접 만듬
+```bash
+$ mv /Users/jujin/Downloads/arm-unknown-linux-gnueabi.tar.xz /Users/jujin/Documents/dev/toolchain/
+```
 
-### 참고 사이트
-* 공식사이트 : [링크](https://crosstool-ng.github.io/)
-
-* CMakeLists.txt 
+### CMakeLists.txt에 추가
 ```text
 ...
 ## ARM Linux Cross Compile Options
-set(TOOLCHAIN /Volumes/crosstool/x-tools/arm-unknown-linux-gnueabi)
+set(TOOLCHAIN /Users/jujin/Documents/dev/toolchain/arm-unknown-linux-gnueabi)
 set(CMAKE_C_COMPILER    ${TOOLCHAIN}/bin/arm-unknown-linux-gnueabi-gcc)
 set(CMAKE_LINKER        ${TOOLCHAIN}/bin/arm-unknown-linux-gnueabi-ld)
 set(CMAKE_NM            ${TOOLCHAIN}/bin/arm-unknown-linux-gnueabi-nm)
@@ -33,7 +42,8 @@ set(CMAKE_CXX_LINK_FLAGS "")
 ### 참고 사이트
 * (Avoid cmake to add the flags -search_paths_first and -headerpad_max_install_names in MacOS)[https://stackoverflow.com/questions/54482519/avoid-cmake-to-add-the-flags-search-paths-first-and-headerpad-max-install-name]
 * [CMake: 크로스 컴파일을 하자](https://codecooking.tistory.com/81)
-
+* crosstool-ng 공식사이트 : [링크](https://crosstool-ng.github.io/)
+* [thinkski/osx-arm-linux-toolchains](https://github.com/thinkski/osx-arm-linux-toolchains)
 
 ### log4c
 * 공식 페이지 - http://log4c.sourceforge.net/?
