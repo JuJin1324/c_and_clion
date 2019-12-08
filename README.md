@@ -40,7 +40,7 @@ set(CMAKE_CXX_LINK_FLAGS "")
 ...
 ```
 ### 참고 사이트
-* (Avoid cmake to add the flags -search_paths_first and -headerpad_max_install_names in MacOS)[https://stackoverflow.com/questions/54482519/avoid-cmake-to-add-the-flags-search-paths-first-and-headerpad-max-install-name]
+* [Avoid cmake to add the flags -search_paths_first and -headerpad_max_install_names in MacOS](https://stackoverflow.com/questions/54482519/avoid-cmake-to-add-the-flags-search-paths-first-and-headerpad-max-install-name)
 * [CMake: 크로스 컴파일을 하자](https://codecooking.tistory.com/81)
 * crosstool-ng 공식사이트 : [링크](https://crosstool-ng.github.io/)
 * [thinkski/osx-arm-linux-toolchains](https://github.com/thinkski/osx-arm-linux-toolchains)
