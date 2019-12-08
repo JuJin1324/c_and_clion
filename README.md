@@ -45,7 +45,7 @@ set(CMAKE_CXX_LINK_FLAGS "")
 * crosstool-ng 공식사이트 : [링크](https://crosstool-ng.github.io/)
 * [thinkski/osx-arm-linux-toolchains](https://github.com/thinkski/osx-arm-linux-toolchains)
 
-### log4c
+## log4c
 * 공식 페이지 - http://log4c.sourceforge.net/?
 * macOS 사용시에 로컬이 아닌 docker에 접속하여 설치
 ### log4c 설치
