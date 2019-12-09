@@ -55,7 +55,6 @@ set(CMAKE_CXX_LINK_FLAGS "")
 # apt-get install -y liblog4c3-dev
 ``` 
 ### 로그 환경설정 xml 파일 : log4crc
-* log4crc 를 cmake-build-debug-XXX 아래 .out(실행파일)과 함께 위치
 * log4crc 주의사항
     - `<category name="dev" priority="debug" appender="stdout" />`
     - `<category name="dev" priority="debug" appender="myrollingfileappender" />`
