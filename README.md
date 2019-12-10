@@ -1,6 +1,21 @@
 # c_and_clion
 C언어 및 CLion 정리
 
+## CMake 예약변수 모두 보기 매크로
+```text
+### CMake의 예약변수들에 대한 내용을 모두 출력하도록 하는 매크로
+macro(print_all_variables)
+    message(STATUS "print_all_variables------------------------------------------{")
+    get_cmake_property(_variableNames VARIABLES)
+    foreach (_variableName ${_variableNames})
+        message(STATUS "${_variableName}=${${_variableName}}")
+    endforeach()
+    message(STATUS "print_all_variables------------------------------------------}")
+endmacro()
+
+print_all_variables()
+```
+
 ## Unity(TDD Library for C)
 * [공식사이트](http://www.throwtheswitch.org/)
 * [Unity Git](https://github.com/ThrowTheSwitch/Unity)
