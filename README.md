@@ -1,6 +1,14 @@
 # c_and_clion
 C언어 및 CLion 정리
 
+## Unity(TDD Library for C)
+* [Unity Git](https://github.com/ThrowTheSwitch/Unity)
+* [공식사이트](http://www.throwtheswitch.org/)
+
+### 사용법
+* git 다운로드 : `$ git clone https://github.com/ThrowTheSwitch/Unity.git`
+* Unity-master 아래 src 디렉터리에서 `unity_internals.h`, `unity.h`, `unity.c` 파일을 unity를 사용하려하는 프로젝트로 붙여넣기 후 CMake에 추가하여 사용
+
 ## CMake macOS arm-linux cross compile
 ### arm-linux Toolchain  
 * 다운로드 [링크](https://github.com/thinkski/osx-arm-linux-toolchains)   
