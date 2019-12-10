@@ -47,14 +47,15 @@ $ mv /Users/jujin/Downloads/arm-unknown-linux-gnueabi.tar.xz /Users/jujin/Docume
 ```text
 ...
 ## ARM Linux Cross Compile Options
-set(TOOLCHAIN /Users/jujin/Documents/dev/toolchain/arm-unknown-linux-gnueabi)
-set(CMAKE_C_COMPILER    ${TOOLCHAIN}/bin/arm-unknown-linux-gnueabi-gcc)
-set(CMAKE_LINKER        ${TOOLCHAIN}/bin/arm-unknown-linux-gnueabi-ld)
-set(CMAKE_NM            ${TOOLCHAIN}/bin/arm-unknown-linux-gnueabi-nm)
-set(CMAKE_OBJCOPY       ${TOOLCHAIN}/bin/arm-unknown-linux-gnueabi-objcopy)
-set(CMAKE_OBJDUMP       ${TOOLCHAIN}/bin/arm-unknown-linux-gnueabi-objdump)
-set(CMAKE_RANLIB        ${TOOLCHAIN}/bin/arm-unknown-linux-gnueabi-ranlib)
-include_directories(${TOOLCHAIN}/arm-unknown-linux-gnueabi/sysroot/usr/include)
+set(HOME_DIR /Users/jujin)
+set(ARM_LINUX_TOOLCHAIN_DIR ${HOME_DIR}/Documents/dev/toolchain/arm-unknown-linux-gnueabi)
+set(CMAKE_C_COMPILER    ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-gcc)
+set(CMAKE_LINKER        ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-ld)
+set(CMAKE_NM            ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-nm)
+set(CMAKE_OBJCOPY       ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-objcopy)
+set(CMAKE_OBJDUMP       ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-objdump)
+set(CMAKE_RANLIB        ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-ranlib)
+include_directories(${ARM_LINUX_TOOLCHAIN_DIR}/arm-unknown-linux-gnueabi/sysroot/usr/include)
 
 ## macOS - warning: cannot find entry symbol arch_paths_first; 에러 대처
 set(HAVE_FLAG_SEARCH_PATHS_FIRST 0)
