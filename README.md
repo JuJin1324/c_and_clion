@@ -33,7 +33,7 @@ set(CMAKE_OBJDUMP       ${TOOLCHAIN}/bin/arm-unknown-linux-gnueabi-objdump)
 set(CMAKE_RANLIB        ${TOOLCHAIN}/bin/arm-unknown-linux-gnueabi-ranlib)
 include_directories(${TOOLCHAIN}/arm-unknown-linux-gnueabi/sysroot/usr/include)
 
-## warning: cannot find entry symbol arch_paths_first; 에러 대처
+## macOS - warning: cannot find entry symbol arch_paths_first; 에러 대처
 set(HAVE_FLAG_SEARCH_PATHS_FIRST 0)
 set(CMAKE_C_LINK_FLAGS "")
 set(CMAKE_CXX_LINK_FLAGS "")
