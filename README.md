@@ -3,7 +3,8 @@ C언어 및 CLion 정리
 
 ## CMake 예약변수 모두 보기 매크로
 ```text
-### CMake의 예약변수들에 대한 내용을 모두 출력하도록 하는 매크로
+## CMake의 예약변수들에 대한 내용을 모두 출력하도록 하는 매크로
+### 매크로 정의
 macro(print_all_variables)
     message(STATUS "print_all_variables------------------------------------------{")
     get_cmake_property(_variableNames VARIABLES)
@@ -13,6 +14,7 @@ macro(print_all_variables)
     message(STATUS "print_all_variables------------------------------------------}")
 endmacro()
 
+### 매크로 사용
 print_all_variables()
 ```
 
@@ -26,7 +28,7 @@ print_all_variables()
 
 ## CMake macOS arm-linux cross compile
 ### arm-linux Toolchain  
-* 다운로드 [링크](https://github.com/thinkski/osx-arm-linux-toolchains)   
+* [GitHub 페이지](https://github.com/thinkski/osx-arm-linux-toolchains)   
 Download 항목에서 [arm-unknown-linux-gnueabi](https://github.com/thinkski/osx-arm-linux-toolchains/releases/download/8.3.0/arm-unknown-linux-gnueabi.tar.xz) 클릭해서 다운로드
 
 * 다운받은 디렉터리로 이동 후 압축풀기
