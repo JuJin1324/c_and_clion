@@ -32,32 +32,34 @@ print_all_variables()
 Download 항목에서 [arm-unknown-linux-gnueabi](https://github.com/thinkski/osx-arm-linux-toolchains/releases/download/8.3.0/arm-unknown-linux-gnueabi.tar.xz) 클릭해서 다운로드
 
 * 다운받은 디렉터리로 이동 후 압축풀기
-    - 여기서는 `/Users/jujin/Downloads`로 가정
+    - 여기서는 `~/Downloads`로 가정
 ```bash
 $ cd ~/Downloads
 $ tar -xvf arm-unknown-linux-gnueabi.tar.xz
 ```
 * 폴더 이동
-    - `/Users/jujin/Downloads` 디렉터리 아래에 두기 뭐해서 옮김 
-    - `/Users/jujin/Documents/dev/toolchain` 디렉터리 밑에 두기로 가정
-    - `Documents` 디렉터리 아래 `dev` 및 `toolchain` 디렉터리 모두 직접 만듬
+    - `~/Downloads` 디렉터리 아래에 두기 뭐해서 옮김 
+    - `/usr/local` 디렉터리 아래로 이동
 ```bash
-$ mv /Users/jujin/Downloads/arm-unknown-linux-gnueabi.tar.xz /Users/jujin/Documents/dev/toolchain/
+$ mv ~/Downloads/arm-unknown-linux-gnueabi /usr/local
 ```
+
+### 환경변수 등록
+* bash 사용시 - `$ vi ~/.bashrc`
+* zsh 사용시 - `$ vi ~/.zshrc`
+* 파일의 마지막에 `export PATH=/usr/local/arm-unknown-linux-gnueabi/bin:$PATH` 추가
 
 ### CMakeLists.txt에 추가
 ```text
 ...
 ## ARM Linux Cross Compile Options
-set(HOME_DIR /Users/jujin)
-set(ARM_LINUX_TOOLCHAIN_DIR ${HOME_DIR}/Documents/dev/toolchain/arm-unknown-linux-gnueabi)
-set(CMAKE_C_COMPILER    ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-gcc)
-set(CMAKE_LINKER        ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-ld)
-set(CMAKE_NM            ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-nm)
-set(CMAKE_OBJCOPY       ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-objcopy)
-set(CMAKE_OBJDUMP       ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-objdump)
-set(CMAKE_RANLIB        ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-ranlib)
-include_directories(${ARM_LINUX_TOOLCHAIN_DIR}/arm-unknown-linux-gnueabi/sysroot/usr/include)
+set(CMAKE_C_COMPILER    arm-unknown-linux-gnueabi-gcc)
+set(CMAKE_LINKER        arm-unknown-linux-gnueabi-ld)
+set(CMAKE_NM            arm-unknown-linux-gnueabi-nm)
+set(CMAKE_OBJCOPY       arm-unknown-linux-gnueabi-objcopy)
+set(CMAKE_OBJDUMP       arm-unknown-linux-gnueabi-objdump)
+set(CMAKE_RANLIB        arm-unknown-linux-gnueabi-ranlib)
+include_directories(/usr/local/arm-unknown-linux-gnueabi/sysroot/usr/include)
 
 ## macOS - warning: cannot find entry symbol arch_paths_first; 에러 대처
 set(HAVE_FLAG_SEARCH_PATHS_FIRST 0)
