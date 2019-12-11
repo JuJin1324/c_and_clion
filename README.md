@@ -52,14 +52,15 @@ $ mv ~/Downloads/arm-unknown-linux-gnueabi /usr/local
 ### CMakeLists.txt에 추가
 ```text
 ...
-## ARM Linux Cross Compile Options
-set(CMAKE_C_COMPILER    arm-unknown-linux-gnueabi-gcc)
-set(CMAKE_LINKER        arm-unknown-linux-gnueabi-ld)
-set(CMAKE_NM            arm-unknown-linux-gnueabi-nm)
-set(CMAKE_OBJCOPY       arm-unknown-linux-gnueabi-objcopy)
-set(CMAKE_OBJDUMP       arm-unknown-linux-gnueabi-objdump)
-set(CMAKE_RANLIB        arm-unknown-linux-gnueabi-ranlib)
-include_directories(/usr/local/arm-unknown-linux-gnueabi/sysroot/usr/include)
+## arm-linux Cross Compile Options for macOS(Ubuntu dosen't need below options)
+set(ARM_LINUX_TOOLCHAIN_DIR /usr/local/arm-unknown-linux-gnueabi)
+set(CMAKE_C_COMPILER    ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-gcc)
+set(CMAKE_LINKER        ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-ld)
+set(CMAKE_NM            ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-nm)
+set(CMAKE_OBJCOPY       ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-objcopy)
+set(CMAKE_OBJDUMP       ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-objdump)
+set(CMAKE_RANLIB        ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-ranlib)
+include_directories(${ARM_LINUX_TOOLCHAIN_DIR}/arm-unknown-linux-gnueabi/sysroot/usr/include)
 
 ## macOS - warning: cannot find entry symbol arch_paths_first; 에러 대처
 set(HAVE_FLAG_SEARCH_PATHS_FIRST 0)
