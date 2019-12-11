@@ -32,7 +32,7 @@ print_all_variables()
 Download 항목에서 [arm-unknown-linux-gnueabi](https://github.com/thinkski/osx-arm-linux-toolchains/releases/download/8.3.0/arm-unknown-linux-gnueabi.tar.xz) 클릭해서 다운로드
 
 * 다운받은 디렉터리로 이동 후 압축풀기
-    - 여기서는 `~/Downloads`로 가정
+    - 여기서는 tar.gz 파일을 `~/Downloads`에 다운로드 받은 것으로 가정
 ```bash
 $ cd ~/Downloads
 $ tar -xvf arm-unknown-linux-gnueabi.tar.xz
