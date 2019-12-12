@@ -49,7 +49,8 @@ $ mv ~/Downloads/arm-unknown-linux-gnueabi /usr/local
 * zsh 사용시 - `$ vi ~/.zshrc`
 * 파일의 마지막에 `export PATH=/usr/local/arm-unknown-linux-gnueabi/bin:$PATH` 추가
 
-### CMakeLists.txt에 추가
+### CMake
+* CMakeLists.txt에 추가
 ```text
 ...
 ## arm-linux Cross Compile Options for macOS(Ubuntu dosen't need below options)
