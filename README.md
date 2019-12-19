@@ -49,13 +49,15 @@ $ mv ~/Downloads/arm-unknown-linux-gnueabi /usr/local
 * zsh 사용시 - `$ vi ~/.zshrc`
 * 파일의 마지막에 `export PATH=/usr/local/arm-unknown-linux-gnueabi/bin:$PATH` 추가
 
-### CMake
+### CMake - macOS
 * CMakeLists.txt에 추가
 ```text
 ...
+## arm-linux Cross Compile Options
+set(CMAKE_C_COMPILER    ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-gcc)
+
 ## arm-linux Cross Compile Options for macOS(Ubuntu dosen't need below options)
 set(ARM_LINUX_TOOLCHAIN_DIR /usr/local/arm-unknown-linux-gnueabi)
-set(CMAKE_C_COMPILER    ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-gcc)
 set(CMAKE_LINKER        ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-ld)
 set(CMAKE_NM            ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-nm)
 set(CMAKE_OBJCOPY       ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-objcopy)
