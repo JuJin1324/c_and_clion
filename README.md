@@ -27,27 +27,19 @@ print_all_variables()
 * Unity-master 아래 src 디렉터리에서 `unity_internals.h`, `unity.h`, `unity.c` 파일을 unity를 사용하려하는 프로젝트로 붙여넣기 후 CMake에 추가하여 사용
 
 ## CMake macOS arm-linux cross compile
-### arm-linux Toolchain  
-* [GitHub 페이지](https://github.com/thinkski/osx-arm-linux-toolchains)   
-Download 항목에서 [arm-unknown-linux-gnueabi](https://github.com/thinkski/osx-arm-linux-toolchains/releases/download/8.3.0/arm-unknown-linux-gnueabi.tar.xz) 클릭해서 다운로드
-
-* 다운받은 디렉터리로 이동 후 압축풀기
+### arm-linux Toolchain 설치
+* 다운로드 및 압축풀기
     - 여기서는 tar.gz 파일을 `~/Downloads`에 다운로드 받은 것으로 가정
 ```bash
 $ cd ~/Downloads
+$ wget https://github.com/thinkski/osx-arm-linux-toolchains/releases/download/8.3.0/arm-unknown-linux-gnueabi.tar.xz
 $ tar -xvf arm-unknown-linux-gnueabi.tar.xz
 ```
-* 폴더 이동
-    - `~/Downloads` 디렉터리 아래에 두기 뭐해서 옮김 
-    - `/usr/local` 디렉터리 아래로 이동
-```bash
-$ mv ~/Downloads/arm-unknown-linux-gnueabi /usr/local
-```
-
-### 환경변수 등록
-* bash 사용시 - `$ vi ~/.bashrc`
-* zsh 사용시 - `$ vi ~/.zshrc`
-* 파일의 마지막에 `export PATH=/usr/local/arm-unknown-linux-gnueabi/bin:$PATH` 추가
+* `/usr/local` 디렉터리 아래로 이동 - $ `mv ~/Downloads/arm-unknown-linux-gnueabi /usr/local`
+* 환경변수 등록  
+    - bash 사용시 - `$ vi ~/.bashrc`
+    - zsh 사용시 - `$ vi ~/.zshrc`
+    - 파일의 마지막에 `export PATH=/usr/local/arm-unknown-linux-gnueabi/bin:$PATH` 추가
 
 ### CMake - macOS
 * CMakeLists.txt에 추가
