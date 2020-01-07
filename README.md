@@ -68,10 +68,6 @@ set(CMAKE_CXX_LINK_FLAGS "")
 * [CMake: 크로스 컴파일을 하자](https://codecooking.tistory.com/81)
 * crosstool-ng 공식사이트 : [링크](https://crosstool-ng.github.io/)
 
-## log4c
-* 공식 페이지 - http://log4c.sourceforge.net/?
-* [log4c_example - jujin](https://github.com/JuJin1324/log4c_example)
-
 ## pthread
 * 기초 : [링크](https://bitsoul.tistory.com/156?category=683199)
 
