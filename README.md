@@ -80,7 +80,7 @@ $ tar -xvf arm-unknown-linux-gnueabi.tar.xz
 
 ### CMake(macOS)
 * CMakeLists.txt에 추가
-```text
+```cmake
 ...
 ## arm-linux Cross Compile Options
 set(CMAKE_C_COMPILER    ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-gcc)
