@@ -16,7 +16,7 @@ TARGETS 뒤에 복사할 바이너리 파일 지정, DESTINATION 뒤에 복사�
 ### INSTALL(DIRECTORY)
 DIRECTORY 뒤에 복사할 디렉터리 지정, DESTINATION 뒤에 복사한 디렉터리가 위치할 경로 지정, FILE_PERMISSIONS 뒤에 
 디렉터리 내부 파일들의 권한 설정
-```
+```cmake
 INSTALL(DIRECTORY bash config
         DESTINATION ${CMAKE_INSTALL_PREFIX}
         FILE_PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
@@ -24,7 +24,7 @@ INSTALL(DIRECTORY bash config
 
 ### INSTALL(PROGRAMS | FILES)
 PROGRAMS 뒤에 복사할 bash 파일들 지정, DESTINATION 뒤에 복사한 bash 파일이 위치할 경로 지정
-```
+```cmake
 INSTALL(PROGRAMS
         start_process.sh
         stop_process.sh
@@ -39,7 +39,7 @@ PROGRAMS 와 FILES의 차이 : Permission
 
 ## 매크로
 ### 예약변수 모두 보기 
-```text
+```cmake
 ## CMake의 예약변수들에 대한 내용을 모두 출력하도록 하는 매크로
 ### 매크로 정의
 macro(print_all_variables)
