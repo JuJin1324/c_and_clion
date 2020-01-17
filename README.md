@@ -1,7 +1,7 @@
 # cmake-starter
 CMake 관련 정리
 
-## Install()
+## CMake Install
 설치 매크로(make install) 정의 : 리눅스에서 설치란 빌드 완료된 실행 바이너리와 라이브러리 및 기타 리소스 파일들을 시스템의
 적절한 위치로 복사하는 작업
 
@@ -9,21 +9,33 @@ CMake 관련 정리
 make install 시에 설치 디렉토리 설정
 * 예시 : `SET(CMAKE_INSTALL_PREFIX /Users/ju-jinyoo/Documents/dev/project-deploy)`
 
+### INSTALL(TARGETS)
+TARGETS 뒤에 복사할 바이너리 파일 지정, DESTINATION 뒤에 복사한 바이너리 파일이 위치할 경로 지정
+* 예시 : `INSTALL(TARGETS ${APPLICATION_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX})`
 
-INSTALL (TARGETS ${APPLICATION_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX})
-INSTALL(DIRECTORY config DESTINATION ${CMAKE_INSTALL_PREFIX})
+### INSTALL(DIRECTORY)
+DIRECTORY 뒤에 복사할 디렉터리 지정, DESTINATION 뒤에 복사한 디렉터리가 위치할 경로 지정, FILE_PERMISSIONS 뒤에 
+디렉터리 내부 파일들의 권한 설정
+```
+INSTALL(DIRECTORY bash config
+        DESTINATION ${CMAKE_INSTALL_PREFIX}
+        FILE_PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+```
 
+### INSTALL(PROGRAMS | FILES)
+PROGRAMS 뒤에 복사할 bash 파일들 지정, DESTINATION 뒤에 복사한 bash 파일이 위치할 경로 지정
+```
 INSTALL(PROGRAMS
-        bash/agent_stop.sh
-        bash/centumfactorial.sh
-        bash/confirm_GPS.sh
-        bash/confirm_temperature.sh
-        bash/gdbserver.sh
-        bash/ps_ct.sh
-        bash/start_CENTUM_FACTORIAL
+        start_process.sh
+        stop_process.sh
         DESTINATION ${CMAKE_INSTALL_PREFIX})
-INSTALL(PROGRAMS deploy-release.sh DESTINATION ${CMAKE_INSTALL_PREFIX})
+``` 
 
+PROGRAMS 와 FILES의 차이 : Permission
+* FILES : 오너 쓰기, 모두 읽기 권한만 설정됨, 실행 권한은 모두 빠짐 : OWNER_READ, GROUP_READ, WORLD_READ
+* PROGRAMS : FILES의 권한 및 실행권한 모두 설정됨 - OWNER_EXECUTE, GROUP_EXECUTE, WORLD_EXECUTE
+
+참조사이트 : [[CMake 튜토리얼] 2. CMakeLists.txt 주요 명령과 변수 정리](https://www.tuwlab.com/ece/27260)
 
 ## 매크로
 ### 예약변수 모두 보기 
