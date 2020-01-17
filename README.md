@@ -1,6 +1,30 @@
 # cmake-starter
 CMake 관련 정리
 
+## Install()
+설치 매크로(make install) 정의 : 리눅스에서 설치란 빌드 완료된 실행 바이너리와 라이브러리 및 기타 리소스 파일들을 시스템의
+적절한 위치로 복사하는 작업
+
+### CMAKE_INSTALL_PREFIX
+make install 시에 설치 디렉토리 설정
+* 예시 : `SET(CMAKE_INSTALL_PREFIX /Users/ju-jinyoo/Documents/dev/project-deploy)`
+
+
+INSTALL (TARGETS ${APPLICATION_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX})
+INSTALL(DIRECTORY config DESTINATION ${CMAKE_INSTALL_PREFIX})
+
+INSTALL(PROGRAMS
+        bash/agent_stop.sh
+        bash/centumfactorial.sh
+        bash/confirm_GPS.sh
+        bash/confirm_temperature.sh
+        bash/gdbserver.sh
+        bash/ps_ct.sh
+        bash/start_CENTUM_FACTORIAL
+        DESTINATION ${CMAKE_INSTALL_PREFIX})
+INSTALL(PROGRAMS deploy-release.sh DESTINATION ${CMAKE_INSTALL_PREFIX})
+
+
 ## 매크로
 ### 예약변수 모두 보기 
 ```text
