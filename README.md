@@ -7,12 +7,16 @@ CMake 관련 정리
 
 ### CMAKE_INSTALL_PREFIX
 make install 시에 설치 디렉토리 설정
-* 예시 : `SET(CMAKE_INSTALL_PREFIX /Users/ju-jinyoo/Documents/dev/project-deploy)`
+```cmake
+SET(CMAKE_INSTALL_PREFIX /Users/ju-jinyoo/Documents/dev/project-deploy)
+```
 
 ### INSTALL(TARGETS)
 TARGETS 뒤에 복사할 바이너리 파일 지정, DESTINATION 뒤에 복사한 바이너리 파일이 위치할 경로 지정
 * 템플릿 : INSTALL(TARGETS <b>바이너리파일</b> DESTINATION <b>설치경로</b>)
-* 예시 : `INSTALL(TARGETS ${APPLICATION_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX})`
+```cmake 
+INSTALL(TARGETS ${APPLICATION_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX})
+```
 
 ### INSTALL(DIRECTORY)
 DIRECTORY 뒤에 복사할 디렉터리 지정, DESTINATION 뒤에 복사한 디렉터리가 위치할 경로 지정, FILE_PERMISSIONS 뒤에 
