@@ -1,7 +1,8 @@
 # cmake-starter
 CMake 관련 정리
 
-## CMake 예약변수 모두 보기 매크로
+## 매크로
+### 예약변수 모두 보기 
 ```text
 ## CMake의 예약변수들에 대한 내용을 모두 출력하도록 하는 매크로
 ### 매크로 정의
@@ -18,7 +19,7 @@ endmacro()
 print_all_variables()
 ```
 
-## macOS arm-linux cross compile
+## arm-linux cross compile
 ### arm-linux Toolchain 설치
 다운로드 및 압축풀기
 * 여기서는 tar.gz 파일을 `~/Downloads`에 다운로드 받은 것으로 가정
@@ -27,13 +28,14 @@ $ cd ~/Downloads
 $ wget https://github.com/thinkski/osx-arm-linux-toolchains/releases/download/8.3.0/arm-unknown-linux-gnueabi.tar.xz
 $ tar -xvf arm-unknown-linux-gnueabi.tar.xz
 ```
-* `/usr/local` 디렉터리 아래로 이동 - $ `mv ~/Downloads/arm-unknown-linux-gnueabi /usr/local`
-* 환경변수 등록  
-    - bash 사용시 - `$ vi ~/.bashrc`
-    - zsh 사용시 - `$ vi ~/.zshrc`
-    - 파일의 마지막에 `export PATH=/usr/local/arm-unknown-linux-gnueabi/bin:$PATH` 추가
+`/usr/local` 디렉터리 아래로 이동 - $ `mv ~/Downloads/arm-unknown-linux-gnueabi /usr/local`
 
-### CMake
+환경변수 등록  
+* bash 사용시 - `$ vi ~/.bashrc`
+* zsh 사용시 - `$ vi ~/.zshrc`
+* 파일의 마지막에 `export PATH=/usr/local/arm-unknown-linux-gnueabi/bin:$PATH` 추가
+
+### CMake(macOS)
 * CMakeLists.txt에 추가
 ```text
 ...
