@@ -39,7 +39,7 @@ INSTALL(PROGRAMS
 ``` 
 
 PROGRAMS 와 FILES의 차이 : Permission
-* FILES : 오너 쓰기, 모두 읽기 권한만 설정됨, 실행 권한은 모두 빠짐 : `OWNER_READ`, `GROUP_READ`, `WORLD_READ`
+* FILES : 오너 쓰기, 모두 읽기 권한만 설정됨, 실행 권한은 모두 빠짐 - `OWNER_READ`, `GROUP_READ`, `WORLD_READ`
 * PROGRAMS : FILES의 권한 및 실행권한 모두 설정됨 - `OWNER_EXECUTE`, `GROUP_EXECUTE`, `WORLD_EXECUTE`
 
 참조사이트 : [[CMake 튜토리얼] 2. CMakeLists.txt 주요 명령과 변수 정리](https://www.tuwlab.com/ece/27260)
