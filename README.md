@@ -62,9 +62,8 @@ endmacro()
 print_all_variables()
 ```
 
-## arm-linux cross compile
-### arm-linux Toolchain 설치
-다운로드 및 압축풀기
+## ARM-Linux Cross Compile : macOS
+### 다운로드 및 압축풀기
 * 여기서는 tar.gz 파일을 `~/Downloads`에 다운로드 받은 것으로 가정
 ```bash
 $ cd ~/Downloads
@@ -78,11 +77,10 @@ $ tar -xvf arm-unknown-linux-gnueabi.tar.xz
 * zsh 사용시 - `$ vi ~/.zshrc`
 * 파일의 마지막에 `export PATH=/usr/local/arm-unknown-linux-gnueabi/bin:$PATH` 추가
 
-### CMake(macOS)
-* CMakeLists.txt에 추가
+### CMake 설정
+CMakeLists.txt에 추가
 ```cmake
-...
-## arm-linux Cross Compile Options
+## ARM-Linux Cross Compile Options
 set(CMAKE_C_COMPILER    ${ARM_LINUX_TOOLCHAIN_DIR}/bin/arm-unknown-linux-gnueabi-gcc)
 
 ## arm-linux Cross Compile Options for macOS(Ubuntu dosen't need below options)
@@ -98,7 +96,22 @@ include_directories(${ARM_LINUX_TOOLCHAIN_DIR}/arm-unknown-linux-gnueabi/sysroot
 set(HAVE_FLAG_SEARCH_PATHS_FIRST 0)
 set(CMAKE_C_LINK_FLAGS "")
 set(CMAKE_CXX_LINK_FLAGS "")
-...
+```
+
+## ARM-Linux Cross Compile : Ubuntu
+### 설치
+```bash
+dpkg --add-architecture i386
+apt-get update; apt-get install -y g++ libc6:i386 libstdc++6:i386
+apt-get install -y emdebian-archive-keyring libc6-armel-cros libc6-device-armel-cross
+apt-get install -y binutils-arm-linux-gnueabi gcc-arm-linux-gnueabi g++-arm-linux-gnueabi 
+apt-get install -y u-boot-tools libncurses5-device
+```
+
+### CMake 설정
+CMakeLists.txt에 추가
+```cmake
+set(CMAKE_C_COMPILER arm-linux-gnueabi-gcc)
 ```
 
 ### 참고 사이트
