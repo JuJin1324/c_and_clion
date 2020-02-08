@@ -1,11 +1,11 @@
 # cmake-starter
 CMake 관련 정리
 
-## CMake Install(Deploy)
+## CMake를 이용한 배포하기
 설치 매크로(make install) 정의 : 리눅스에서 설치란 빌드 완료된 실행 바이너리와 라이브러리 및 기타 리소스 파일들을 시스템의
 적절한 위치로 복사하는 작업
 
-### CMAKE_INSTALL_PREFIX
+### CMAKE_INSTALL_PREFIX 변수
 make install 시에 설치 디렉토리 설정
 ```cmake
 SET(CMAKE_INSTALL_PREFIX /Users/ju-jinyoo/Documents/dev/project-deploy)
