@@ -64,6 +64,7 @@ print_all_variables()
 
 ## ARM-Linux Toolchain 사용하기 : macOS
 macOS 용 ARM-Linux Toolchain 설치 : [참조사이트](https://github.com/JuJin1324/CLion_stater#arm-linux-%ED%88%B4%EC%B2%B4%EC%9D%B8-%EC%85%8B%ED%8C%85-1)
+에서 <b>ARM-Linux 툴체인 셋팅</b> 따라하기
 
 ### CMake 설정
 CMakeLists.txt에 추가
@@ -88,6 +89,7 @@ set(CMAKE_CXX_LINK_FLAGS "")
 
 ## ARM-Linux Toolchain 사용하기 : Ubuntu
 Ubuntu 용 ARM-Linux Toolchain 설치 : [참조사이트](https://github.com/JuJin1324/CLion_stater#arm-linux-%ED%88%B4%EC%B2%B4%EC%9D%B8-%EC%85%8B%ED%8C%85-2)
+에서 <b>ARM-Linux 툴체인 셋팅</b> 따라하기
 
 ### CMake 설정
 CMakeLists.txt에 추가
@@ -102,6 +104,7 @@ set(CMAKE_C_COMPILER arm-linux-gnueabi-gcc)
 
 ## ARM-Linux Toolchain 사용하기 : Windows
 Windows 용 ARM-Linux Toolchain 설치 : [참조사이트](https://github.com/JuJin1324/CLion_stater#arm-linux-%ED%88%B4%EC%B2%B4%EC%9D%B8-%EC%85%8B%ED%8C%85)
+에서 <b>ARM-Linux 툴체인 셋팅</b> 따라하기
 
 ### CMake 설정
 CMakeLists.txt에 추가
