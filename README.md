@@ -62,20 +62,8 @@ endmacro()
 print_all_variables()
 ```
 
-## ARM-Linux Cross Compile : macOS
-### 다운로드 및 압축풀기
-* 여기서는 tar.gz 파일을 `~/Downloads`에 다운로드 받은 것으로 가정
-```bash
-$ cd ~/Downloads
-$ wget https://github.com/thinkski/osx-arm-linux-toolchains/releases/download/8.3.0/arm-unknown-linux-gnueabi.tar.xz
-$ tar -xvf arm-unknown-linux-gnueabi.tar.xz
-```
-`/usr/local` 디렉터리 아래로 이동 - $ `mv ~/Downloads/arm-unknown-linux-gnueabi /usr/local`
-
-환경변수 등록  
-* bash 사용시 - `$ vi ~/.bashrc`
-* zsh 사용시 - `$ vi ~/.zshrc`
-* 파일의 마지막에 `export PATH=/usr/local/arm-unknown-linux-gnueabi/bin:$PATH` 추가
+## ARM-Linux Toolchain 사용하기 : macOS
+macOS 용 ARM-Linux Toolchain 설치 : [참조사이트](https://github.com/JuJin1324/CLion_stater#arm-linux-%ED%88%B4%EC%B2%B4%EC%9D%B8-%EC%85%8B%ED%8C%85-1)
 
 ### CMake 설정
 CMakeLists.txt에 추가
@@ -98,15 +86,8 @@ set(CMAKE_C_LINK_FLAGS "")
 set(CMAKE_CXX_LINK_FLAGS "")
 ```
 
-## ARM-Linux Cross Compile : Ubuntu
-### 설치
-```bash
-dpkg --add-architecture i386
-apt-get update; apt-get install -y g++ libc6:i386 libstdc++6:i386
-apt-get install -y emdebian-archive-keyring libc6-armel-cros libc6-device-armel-cross
-apt-get install -y binutils-arm-linux-gnueabi gcc-arm-linux-gnueabi g++-arm-linux-gnueabi 
-apt-get install -y u-boot-tools libncurses5-device
-```
+## ARM-Linux Toolchain 사용하기 : Ubuntu
+Ubuntu 용 ARM-Linux Toolchain 설치 : [참조사이트](https://github.com/JuJin1324/CLion_stater#arm-linux-%ED%88%B4%EC%B2%B4%EC%9D%B8-%EC%85%8B%ED%8C%85-2)
 
 ### CMake 설정
 CMakeLists.txt에 추가
@@ -118,3 +99,12 @@ set(CMAKE_C_COMPILER arm-linux-gnueabi-gcc)
 * [Avoid cmake to add the flags -search_paths_first and -headerpad_max_install_names in MacOS](https://stackoverflow.com/questions/54482519/avoid-cmake-to-add-the-flags-search-paths-first-and-headerpad-max-install-name)
 * [CMake: 크로스 컴파일을 하자](https://codecooking.tistory.com/81)
 * crosstool-ng 공식사이트 : [링크](https://crosstool-ng.github.io/)
+
+## ARM-Linux Toolchain 사용하기 : Windows
+Windows 용 ARM-Linux Toolchain 설치 : [참조사이트](https://github.com/JuJin1324/CLion_stater#arm-linux-%ED%88%B4%EC%B2%B4%EC%9D%B8-%EC%85%8B%ED%8C%85)
+
+### CMake 설정
+CMakeLists.txt에 추가
+```cmake
+
+```
