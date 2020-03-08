@@ -63,7 +63,7 @@ print_all_variables()
 ```
 
 ## ARM-Linux Toolchain 사용하기 : macOS
-macOS 용 ARM-Linux Toolchain 설치 : [참조사이트](https://github.com/JuJin1324/CLion_stater#arm-linux-%ED%88%B4%EC%B2%B4%EC%9D%B8-%EC%85%8B%ED%8C%85-1)
+macOS 용 ARM-Linux Toolchain 설치 : [참조사이트](https://github.com/JuJin1324/ARM-Linux-Toolchain/blob/master/README.md)
 에서 <b>ARM-Linux 툴체인 셋팅</b> 따라하기
 
 ### CMake 설정
@@ -88,7 +88,7 @@ set(CMAKE_CXX_LINK_FLAGS "")
 ```
 
 ## ARM-Linux Toolchain 사용하기 : Ubuntu
-Ubuntu 용 ARM-Linux Toolchain 설치 : [참조사이트](https://github.com/JuJin1324/CLion_stater#arm-linux-%ED%88%B4%EC%B2%B4%EC%9D%B8-%EC%85%8B%ED%8C%85-2)
+Ubuntu 용 ARM-Linux Toolchain 설치 : [참조사이트](https://github.com/JuJin1324/ARM-Linux-Toolchain/blob/master/README.md)
 에서 <b>ARM-Linux 툴체인 셋팅</b> 따라하기
 
 ### CMake 설정
@@ -103,11 +103,12 @@ set(CMAKE_C_COMPILER arm-linux-gnueabi-gcc)
 * crosstool-ng 공식사이트 : [링크](https://crosstool-ng.github.io/)
 
 ## ARM-Linux Toolchain 사용하기 : Windows
-Windows 용 ARM-Linux Toolchain 설치 : [참조사이트](https://github.com/JuJin1324/CLion_stater#arm-linux-%ED%88%B4%EC%B2%B4%EC%9D%B8-%EC%85%8B%ED%8C%85)
+Windows 용 ARM-Linux Toolchain 설치 : [참조사이트](https://github.com/JuJin1324/ARM-Linux-Toolchain/blob/master/README.md)
 에서 <b>ARM-Linux 툴체인 셋팅</b> 따라하기
 
 ### CMake 설정
 CMakeLists.txt에 추가
 ```cmake
-
+set(CMAKE_C_COMPILER arm-none-linux-gnueabi-gcc)
+set(CMAKE_CXX_COMPILER arm-none-linux-gnueabi-g++)
 ```
